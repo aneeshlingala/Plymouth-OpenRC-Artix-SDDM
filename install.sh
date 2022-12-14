@@ -16,9 +16,10 @@ if [[ -f $FILE ]];then
     sudo rc-update add plymouth-start
     sudo rc-update add plymouth-quit
     echo "Add your gpu driver in drivers and plymouth hook in hooks"
+    sleep 10
     sudo nano /etc/mkinitcpio.conf
     sudo mkinitcpio -P
-    sudo cp artix-logo-new /usr/share/plymouth/themes
+    sudo cp -r artix-logo-new /usr/share/plymouth/themes
     sudo plymouth-set-default-theme artix-logo-new
     sudo mkinitcpio -P
     echo "Install finished successfuly... quitting "
