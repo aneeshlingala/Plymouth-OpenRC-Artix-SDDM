@@ -5,7 +5,7 @@ FILE="/bin/sddm"
 if [[ -f $FILE ]];then
     echo "SDDM exists, continuing..."
     sudo pacman -U paru-1.11.1-1.3-x86_64.pkg.tar.zst
-    paru -S plymouth-nosystemd
+    paru -S plymouth-nosystemd plymouth-openrc-plugin
     sudo cp plymouth-quit plymouth-start /etc/init.d
     sudo rm -rf /etc/init.d/sddm
     sudo cp sddm /etc/init.d
