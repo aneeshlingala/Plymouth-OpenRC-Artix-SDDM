@@ -1,0 +1,8 @@
+[Plymouth Theme]
+Name=Artix Logo New
+Description=A theme that features a blank background with a logo.
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/artix-logo-new
+ScriptFile=/usr/share/plymouth/themes/artix-logo-new/artix-logo-new.script
