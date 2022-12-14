@@ -22,6 +22,6 @@ if [[ -f $FILE ]];then
     sudo plymouth-set-default-theme artix-logo-new
     sudo mkinitcpio -P
 else
-    echo "SDDM doesn't exist, exiting... "
+    echo "SDDM doesn't exist, install it with, sudo pacman -S sddm sddm-openrc, exiting..." 
     exit
 fi
