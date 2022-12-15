@@ -4,8 +4,14 @@ echo "!! ONLY FOR SDDM !!"
 FILE="/bin/sddm"
 if [[ -f $FILE ]];then
     echo "SDDM exists, continuing..."
-    sudo pacman -U paru-1.11.1-1.3-x86_64.pkg.tar.zst
-    paru -S plymouth-nosystemd plymouth-openrc-plugin
+    sudo pacman -S git
+    git clone https://aur.archlinux.org/plymouth-nosystemd.git
+    cd plymouth-nosystemd && makepkg -si
+    cd ..
+    git clone https://aur.archlinux.org/plymouth-openrc-plugin.git
+    cd plymouth-openrc-plugin && makepkg -si
+    cd ..
+    sudo rm -rf plymouth-nosystemd plymouth-openrc-plugin
     sudo cp plymouth-quit plymouth-start /etc/init.d
     sudo rm -rf /etc/init.d/sddm
     sudo cp sddm /etc/init.d
@@ -22,7 +28,6 @@ if [[ -f $FILE ]];then
     sudo cp -r artix-logo-new /usr/share/plymouth/themes
     sudo plymouth-set-default-theme artix-logo-new
     sudo mkinitcpio -P
-    sudo pacman -R paru
     echo "Install finished successfuly... goodbye!"
     exit
 
