@@ -1,4 +1,4 @@
-echo "Installing PLymouth for Artix Linux x86_64..."
+echo "Installing Plymouth with a theme for Artix Linux x86_64..."
 echo "!! ONLY FOR SDDM !!"
 
 FILE="/bin/sddm"
