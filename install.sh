@@ -22,6 +22,7 @@ if [[ -f $FILE ]];then
     sudo cp -r artix-logo-new /usr/share/plymouth/themes
     sudo plymouth-set-default-theme artix-logo-new
     sudo mkinitcpio -P
+    sudo pacman -R paru
     echo "Install finished successfuly... quitting "
     exit
 
